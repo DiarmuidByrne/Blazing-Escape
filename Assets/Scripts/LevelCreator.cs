@@ -2,16 +2,16 @@
 using System.Collections;
 
 public class LevelCreator : MonoBehaviour {
+    public GameObject character;
 	public GameObject startTile;
 	public GameObject gLeft, gMiddle, gRight, gBlank;
 	// Private Variables
 	private float startUpPosY;
-	private string currTile = "left";
-	private const float LEFT_TILE_WIDTH = 1.1f;
-	private const float MIDDLE_TILE_WIDTH = 1.2f;
+	private const float TILE_WIDTH = 2.4f;
 	private const float RIGHT_TILE_WIDTH = 1.1f;
 	private int heightLevel = 0;
 	private GameObject tmpTile;
+	private float TILE_WIDTH2;
 
 	private GameObject collectedTiles;
 	private GameObject gameLayer;
@@ -34,8 +34,9 @@ public class LevelCreator : MonoBehaviour {
 		gameLayer = GameObject.Find ("GameLayer");
 		collectedTiles = GameObject.Find ("tiles");
 		player = GameObject.Find ("Character");
+		TILE_WIDTH2 = startUpPosY;
 
-		for (int i = 0; i<25; i++) {
+		for (int i = 0; i<30; i++) {
 			GameObject tmpg1 = Instantiate (Resources.Load ("ground_left", typeof(GameObject))) as GameObject;
 			tmpg1.transform.parent = collectedTiles.transform.FindChild("gLeft").transform;
 			GameObject tmpg2 = Instantiate (Resources.Load ("ground_middle", typeof(GameObject))) as GameObject;
@@ -125,9 +126,9 @@ public class LevelCreator : MonoBehaviour {
 
 		if (lastTile == "blank") {
 			SetTile ("left");
-			middleCounter = (int)Random.Range (4, 10); 
+			middleCounter = (int)Random.Range (5, 15); 
 		} else if (lastTile == "right") {
-			blankCounter = (int)Random.Range (3, 5); 
+			blankCounter = (int)Random.Range (5, 8); 
 		} else if (lastTile == "middle") {
 			SetTile ("right");
 			//enemyAdded=false;
@@ -175,12 +176,13 @@ public class LevelCreator : MonoBehaviour {
 		}
 
 		tmpTile.transform.parent = gameLayer.transform;
-		if (type != "right") { 
-
-			tmpTile.transform.position = new Vector2 (startTile.transform.position.x + (TILE_WIDTH), startUpPosY + (heightLevel) * (TILE_WIDTH));
-		} else { 
+        tmpTile.transform.position = new Vector2(startTile.transform.position.x + (TILE_WIDTH), startUpPosY);
+        /*if (type != "right") {
+            //tmpTile.transform.position = new Vector2 (startTile.transform.position.x + (TILE_WIDTH), startUpPosY + (heightLevel) * (TILE_WIDTH));
+            tmpTile.transform.position = new Vector2(startTile.transform.position.x + (TILE_WIDTH), startUpPosY);
+        } else { 
 			tmpTile.transform.position = new Vector2 (startTile.transform.position.x + (RIGHT_TILE_WIDTH), startUpPosY + (heightLevel) * (TILE_WIDTH));
-		}
+		}*/
 		startTile = tmpTile;
 		lastTile = type;
 	}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazing Escape V2.CSharp.Plugins", "Blazing Escape V2.CSharp.Plugins.csproj", "{2C45D89E-DA8C-3299-5F36-2DC3D9297CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazing Escape V2.CSharp", "Blazing Escape V2.CSharp.csproj", "{A9893A2D-64D5-E5A3-225A-41DA60D457D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazing Escape V2.CSharp.Editor", "Blazing Escape V2.CSharp.Editor.csproj", "{875D8655-A34A-68EF-1AE9-8FFB309C2B1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C45D89E-DA8C-3299-5F36-2DC3D9297CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C45D89E-DA8C-3299-5F36-2DC3D9297CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C45D89E-DA8C-3299-5F36-2DC3D9297CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C45D89E-DA8C-3299-5F36-2DC3D9297CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9893A2D-64D5-E5A3-225A-41DA60D457D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9893A2D-64D5-E5A3-225A-41DA60D457D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9893A2D-64D5-E5A3-225A-41DA60D457D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9893A2D-64D5-E5A3-225A-41DA60D457D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875D8655-A34A-68EF-1AE9-8FFB309C2B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875D8655-A34A-68EF-1AE9-8FFB309C2B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875D8655-A34A-68EF-1AE9-8FFB309C2B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875D8655-A34A-68EF-1AE9-8FFB309C2B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

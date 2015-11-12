@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CharacterControllerScript : MonoBehaviour {
 
+    private bool moving = false;
 	public float maxSpeed = 10f;
 	bool facingRight = true;
 	public bool grounded = false;
@@ -13,7 +14,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	private float move = 0;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 700;
+	public float jumpForce = 800;
 	private float runningTimeLimit = 10f;
 	private float stoppedTimeLimit = 4f;
 	Animator anim;
@@ -43,6 +44,7 @@ public class CharacterControllerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        /*
 		if (anim.GetFloat("speed") > 0.01) {
 			if(runningTimeLimit > 1f) {
 				// Decrease timeLimit.
@@ -80,9 +82,11 @@ public class CharacterControllerScript : MonoBehaviour {
 				}
 			}
 		}
-
+        */
 		pointLight.intensity = (int)2;
 		move = Input.GetAxis ("Horizontal");
+		
+        //Debug.Log("Speed: ");
 		// jump
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 		//anim.SetBool ("Ground", grounded);
