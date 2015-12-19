@@ -18,7 +18,6 @@ public class TrapScript : MonoBehaviour {
 			GameObject tmpPlayer = GameObject.Find ("Character");
 			tmpPlayer.GetComponent<Collider2D>().enabled = false;
 			tmpPlayer.GetComponent<Collider2D>().enabled = false;
-			GameObject character = GameObject.Find("Character");
 			BoxCollider2D boxCol = tmpPlayer.GetComponent<BoxCollider2D>();
 			tmpPlayer.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 650));
 			boxCol.enabled = false;

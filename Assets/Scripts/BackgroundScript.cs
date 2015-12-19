@@ -15,13 +15,11 @@ public class BackgroundScript : MonoBehaviour {
 		if (background2.position.x <= player.transform.position.x &&
 		    (player.transform.position.x - 5) >= background.position.x ) {
 			Vector3 temp = background.position;
-			Vector3 temp2 = background2.position;
 			temp.x += 66;
 			background.position = temp;
 		}
 		if (background.position.x <= player.transform.position.x &&
 		    background2.position.x <= (player.transform.position.x -5)) {
-			Vector3 temp = background.position;
 			Vector3 temp2 = background2.position;
 			temp2.x += 66;
 			background2.position = temp2;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelCreator : MonoBehaviour {
@@ -9,15 +10,12 @@ public class LevelCreator : MonoBehaviour {
 	private float startUpPosY;
 	private const float TILE_WIDTH = 2.4f;
 	private const float RIGHT_TILE_WIDTH = 1.1f;
-	private int heightLevel = 0;
 	private GameObject tmpTile;
-	private float TILE_WIDTH2;
 
 	private GameObject collectedTiles;
 	private GameObject gameLayer;
 	private GameObject player;
 
-	private float gameSpeed = 2.0f;
 	private int blankCounter = 0;
 	private int middleCounter = 0;
 	private string lastTile = "right";
@@ -34,7 +32,6 @@ public class LevelCreator : MonoBehaviour {
 		gameLayer = GameObject.Find ("GameLayer");
 		collectedTiles = GameObject.Find ("tiles");
 		player = GameObject.Find ("Character");
-		TILE_WIDTH2 = startUpPosY;
 
 		for (int i = 0; i<30; i++) {
 			GameObject tmpg1 = Instantiate (Resources.Load ("ground_left", typeof(GameObject))) as GameObject;
@@ -128,7 +125,7 @@ public class LevelCreator : MonoBehaviour {
 			SetTile ("left");
 			middleCounter = (int)Random.Range (5, 15); 
 		} else if (lastTile == "right") {
-			blankCounter = (int)Random.Range (5, 8); 
+			blankCounter = (int)Random.Range (5, 7); 
 		} else if (lastTile == "middle") {
 			SetTile ("right");
 			//enemyAdded=false;
@@ -177,12 +174,7 @@ public class LevelCreator : MonoBehaviour {
 
 		tmpTile.transform.parent = gameLayer.transform;
         tmpTile.transform.position = new Vector2(startTile.transform.position.x + (TILE_WIDTH), startUpPosY);
-        /*if (type != "right") {
-            //tmpTile.transform.position = new Vector2 (startTile.transform.position.x + (TILE_WIDTH), startUpPosY + (heightLevel) * (TILE_WIDTH));
-            tmpTile.transform.position = new Vector2(startTile.transform.position.x + (TILE_WIDTH), startUpPosY);
-        } else { 
-			tmpTile.transform.position = new Vector2 (startTile.transform.position.x + (RIGHT_TILE_WIDTH), startUpPosY + (heightLevel) * (TILE_WIDTH));
-		}*/
+
 		startTile = tmpTile;
 		lastTile = type;
 	}
